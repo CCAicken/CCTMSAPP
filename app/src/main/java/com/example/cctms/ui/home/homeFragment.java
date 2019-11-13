@@ -1,0 +1,33 @@
+package com.example.cctms.ui.home;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
+import com.example.cctms.R;
+
+
+public class homeFragment extends Fragment {
+
+//    菜单主页模块
+    private homeViewModel homeViewModel;
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        homeViewModel =
+                ViewModelProviders.of(this).get(com.example.cctms.ui.home.homeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        return root;
+    }
+}

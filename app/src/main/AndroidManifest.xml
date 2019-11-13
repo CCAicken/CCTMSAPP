@@ -10,6 +10,16 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".IndexActivity"
+            android:label="@string/title_activity_index" />
+        <activity
+            android:name=".ui.yic.addyic"
+            android:label="@string/title_activity_index" />
+        <activity
+            android:name=".ui.yic.searchyic"
+            android:label="@string/title_activity_index" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

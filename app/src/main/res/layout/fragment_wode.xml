@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--我的信息菜单页-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/wode_top"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:background="#79B9EC"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/wode_head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/yonghu"></ImageView>
+
+        <TextView
+            android:id="@+id/wode_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_toRightOf="@id/wode_head"
+            android:text="用户名"
+            android:textColor="#fff"
+            android:textSize="20sp"></TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/wode_body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wode_top"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EBF1F5"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:text="我的信息"
+            android:textColor="#000"
+            android:textSize="18sp"></TextView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            android:background="@drawable/zhankai">
+
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/wode_body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wode_body1"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#EBF1F5"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:text="关于我们"
+            android:textColor="#000"
+            android:textSize="18sp"></TextView>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            android:background="@drawable/zhankai">
+
+        </ImageView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_logoout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/bg_zhengd"
+        android:text="退出登录"
+        android:textColor="#fff"
+        android:textSize="18sp"></Button>
+</RelativeLayout>
