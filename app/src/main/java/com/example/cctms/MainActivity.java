@@ -2,9 +2,14 @@ package com.example.cctms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +18,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.example.cctms.model.Tuser;
+import com.example.cctms.util.GPStool;
 import com.example.cctms.util.JsonData;
 
 import java.io.IOException;
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     /*登录页面逻辑*/
     private Button btnLogin;
     private EditText stuId,stuPwd;
+    private GPStool gpstool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +45,28 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,IndexActivity.class);
-                startActivity(intent);
+                if(gpstool.isOPen(MainActivity.this)){
+                    Intent intent = new Intent(MainActivity.this,IndexActivity.class);
+                    startActivity(intent);
+                }else{
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(android.R.drawable.ic_dialog_info)
+                            .setTitle("提示")
+                            .setMessage("开启定位")
+                            .setNegativeButton("取消",null)
+                            .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                                    startActivityForResult(intent,887);
+                                    dialogInterface.dismiss();
+                                }
+                            })
+                            .show();
+                    //MainActivity
+                    //Toast.makeText(MainActivity.this,"未打开gps",Toast.LENGTH_SHORT).show();
+                }
+
                 //url+="stuId="+stuId+"stuPwd"+stuPwd;
                 //sendRequestWithOkHttp();
                 //Intent intent = new Intent(MainActivity.this,IndexActivity.class);
