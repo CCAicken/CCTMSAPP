@@ -1,27 +1,24 @@
 package com.example.cctms;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.alibaba.fastjson.JSON;
-import com.example.cctms.model.Tuser;
 import com.example.cctms.util.GPStool;
 import com.example.cctms.util.JsonData;
 
 import java.io.IOException;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -33,21 +30,25 @@ public class MainActivity extends AppCompatActivity {
     String url="http://192.168.150.2:8080/AONT/user/stulogin";
     /*登录页面逻辑*/
     private Button btnLogin;
-    private EditText stuId,stuPwd;
+    private EditText username,userpassword;
     private GPStool gpstool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         btnLogin = findViewById(R.id.btn_login);
-        stuId=findViewById(R.id.et_1);
-        stuPwd=findViewById(R.id.et_2);
+        username=findViewById(R.id.et_1);
+        userpassword=findViewById(R.id.et_2);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(gpstool.isOPen(MainActivity.this)){
-                    Intent intent = new Intent(MainActivity.this,IndexActivity.class);
-                    startActivity(intent);
+                    Toast.makeText(MainActivity.this,"密码：保存成功",Toast.LENGTH_SHORT).show();
+                    //Intent intent = new Intent(MainActivity.this,IndexActivity.class);
+                   // startActivity(intent);
                 }else{
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(android.R.drawable.ic_dialog_info)
@@ -79,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-        formBody.add("stuId",stuId.getText().toString());//传递键值对参数
-        formBody.add("stuPwd",stuPwd.getText().toString());
+        formBody.add("stuId",username.getText().toString());//传递键值对参数
+        formBody.add("stuPwd",userpassword.getText().toString());
         Request request = new Request.Builder()//创建Request 对象。
                 .url(url)
                 .post(formBody.build())//传递请求体
