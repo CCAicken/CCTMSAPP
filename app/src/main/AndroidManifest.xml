@@ -16,6 +16,11 @@
         <activity
             android:name=".IndexActivity"
             android:label="@string/title_activity_index" />
+        <!--录短视频-->
+        <activity android:name=".video.VideoRecordActivity"></activity>
+        <activity
+            android:name=".video.VideoMainActivity"
+            android:label="@string/title_activity_index" />
         <activity
             android:name=".ui.yic.addyic"
             android:label="@string/title_activity_index" />

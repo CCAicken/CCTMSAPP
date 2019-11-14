@@ -6,16 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.cctms.IndexActivity;
-import com.example.cctms.MainActivity;
 import com.example.cctms.R;
+import com.example.cctms.video.VideoMainActivity;
 
 public class yicFragment extends Fragment {
 
@@ -35,14 +32,14 @@ public class yicFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //跳转添加异常页面
-                Intent intent = new Intent(getActivity(), addyic.class);
+                Intent intent = new Intent(getActivity(), VideoMainActivity.class);
                 startActivity(intent);
             }
         });
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //跳转添加异常页面
+                //跳转查看历史异常页面
                 Intent intent = new Intent(getActivity(), searchyic.class);
                 startActivity(intent);
             }

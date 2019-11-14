@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(gpstool.isOPen(MainActivity.this)){
-                    Toast.makeText(MainActivity.this,"密码：保存成功",Toast.LENGTH_SHORT).show();
-                    //Intent intent = new Intent(MainActivity.this,IndexActivity.class);
-                   // startActivity(intent);
+                    //Toast.makeText(MainActivity.this,"密码：保存成功",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,IndexActivity.class);
+                    startActivity(intent);
                 }else{
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(android.R.drawable.ic_dialog_info)
