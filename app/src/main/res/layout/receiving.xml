@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.example.cctms.ui.home.ReceivingLinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="36dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXX产品名 "
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ff2f2f2f"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="320dp"
+            android:layout_height="4px"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="7dp"
+            android:background="#ffeeeeee"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/logistics_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="物流码：00000000000001  "
+                android:textColor="#ff767676"
+                android:layout_marginTop="11dp"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tv_expand_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="展开"
+                android:textColor="#ff699eff"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="7dp"
+                android:textSize="15sp"/>
+            <ImageView
+                android:id="@+id/iv_expand_icon"
+                android:layout_width="13dp"
+                android:layout_height="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/zhankai"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/order_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单编号：10000000001"
+                android:textColor="#ff767676"
+                android:layout_marginTop="11dp"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间：2019-04-19 15:20:32"
+                android:textColor="#ff767676"
+                android:layout_marginTop="11dp"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+    </com.example.cctms.ui.home.ReceivingLinearLayout>
+
+</RelativeLayout>
