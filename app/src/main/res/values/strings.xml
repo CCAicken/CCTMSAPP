@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">冷链运输系统</string>
     <string name="title_activity_index">冷链运输系统</string>
-    <string name="bottom_item_home">主页</string>
+    <string name="bottom_item_home">我的任务</string>
     <string name="bottom_item_yic">异常记录</string>
     <string name="bottom_item_wode">我的信息</string>
     <string name="str_url">http://192.168.150.2:8080/AONT/</string>
