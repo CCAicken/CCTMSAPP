@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(android.R.drawable.ic_dialog_info)
                             .setTitle("提示")
-                            .setMessage("开启定位")
+                            .setMessage("请开启GPS开启定位")
                             .setNegativeButton("取消",null)
                             .setPositiveButton("确认", new DialogInterface.OnClickListener() {
                                 @Override
