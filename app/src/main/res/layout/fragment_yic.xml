@@ -7,6 +7,22 @@
     android:orientation="vertical"
     android:padding="15dp">
 
+    <!--打卡-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@xml/bg_jilu"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_daka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@xml/bg_btn4"
+            android:text="线路打卡"
+            android:textColor="#FFF"></Button>
+    </LinearLayout>
     <!--添加异常记录-->
     <LinearLayout
         android:layout_width="match_parent"

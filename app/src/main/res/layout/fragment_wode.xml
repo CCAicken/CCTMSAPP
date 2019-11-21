@@ -9,6 +9,7 @@
         android:id="@+id/wode_top"
         android:layout_width="match_parent"
         android:layout_height="84dp"
+        android:layout_marginTop="2dp"
         android:background="#79B9EC"
         android:padding="1dp">
 
@@ -34,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/wode_top"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="5dp">
 
         <TextView
             android:layout_width="match_parent"

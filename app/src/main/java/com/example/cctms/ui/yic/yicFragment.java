@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.cctms.QRcode.activity_daka;
 import com.example.cctms.R;
 import com.example.cctms.video.VideoMainActivity;
 
@@ -28,6 +29,7 @@ public class yicFragment extends Fragment {
         // Button mbt_zhengd = root.findViewById(R.id.btn_zhengd);
         Button btn_addyic= root.findViewById(R.id.btn_addyic);
         Button btn_search=root.findViewById(R.id.btn_yicsearch);
+        Button btn_daka=root.findViewById(R.id.btn_daka);
         btn_addyic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,15 @@ public class yicFragment extends Fragment {
             public void onClick(View v) {
                 //跳转查看历史异常页面
                 Intent intent = new Intent(getActivity(), searchyic.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_daka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //线路打卡
+                Intent intent = new Intent(getActivity(), activity_daka.class);
                 startActivity(intent);
             }
         });

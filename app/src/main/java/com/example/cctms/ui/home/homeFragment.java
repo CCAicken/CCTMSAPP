@@ -41,7 +41,7 @@ public class homeFragment extends Fragment {
             receivingLinearLayout = (ReceivingLinearLayout)view.findViewById(R.id.linearLayout);
             ViewHolder viewHolder = new ViewHolder(view, receivingEntity);
             viewHolder.refreshUI();
-            receivingLinearLayout.bindExpandButton((ImageView) view.findViewById(R.id.iv_expand_icon),(TextView) view.findViewById(R.id.tv_expand_icon), R.drawable.zhankai, R.drawable.zhankai);
+            receivingLinearLayout.bindExpandButton((ImageView) view.findViewById(R.id.iv_expand_icon),(TextView) view.findViewById(R.id.tv_expand_icon), R.drawable.zhankai, R.drawable.zhankai_up);
             receivingLinearLayout.setLimitHeight(280);//设置折叠的临界高度
             linearLayout.addView(view);//添加子条目
         }

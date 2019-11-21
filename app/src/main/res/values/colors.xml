@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#2196F3</color>
     <color name="colorAccent">#2196F3</color>
     <color name="bottomNavBackground">#2196F3</color>
+
+    <color name="scan_corner_color">#0effc2</color>
 </resources>
