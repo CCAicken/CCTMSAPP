@@ -10,10 +10,22 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="定制化扫描界面"
+        android:text="扫描打卡二维码"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:background="@xml/bg_btn4"
+        android:textColor="#FFF"
         />
+    <TextView
+        android:id="@+id/tv_dakamsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
+        android:textColor="#141414"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+    />
 
 </RelativeLayout>

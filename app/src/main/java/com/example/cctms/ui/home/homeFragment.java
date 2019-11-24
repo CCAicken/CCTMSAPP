@@ -35,7 +35,7 @@ public class homeFragment extends Fragment {
         linearLayout =root.findViewById(R.id.ell_product);
         linearLayout.removeAllViews();//清除所有的子View（避免重新刷新数据时重复添加）
         for (int i = 1; i <= 10; i++){
-            ReceivingEntity receivingEntity = new ReceivingEntity("XXX产品名称"+i,"0000000000000"+i,"1000000000"+i,"2019-04-19 15:20:32");
+            ReceivingEntity receivingEntity = new ReceivingEntity("任务名称"+i,"0000000000000"+i,"1000000000"+i,"2019-04-19 15:20:32");
 
             View view = inflater.inflate(R.layout.receiving, null);
             receivingLinearLayout = (ReceivingLinearLayout)view.findViewById(R.id.linearLayout);
@@ -69,8 +69,8 @@ public class homeFragment extends Fragment {
 
         private void refreshUI() {
             name.setText(receivingEntity.getName());
-            logistics_code.setText("物流码：" + receivingEntity.getLogistics_code());
-            order_number.setText("订单编号：" + receivingEntity.getOrder_number());
+            logistics_code.setText("任务编号：" + receivingEntity.getLogistics_code());
+            order_number.setText("冷链车号牌：" + receivingEntity.getOrder_number());
             date.setText("时间：" + receivingEntity.getData());
         }
     }

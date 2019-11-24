@@ -233,7 +233,7 @@ public class CaptureFragment extends Fragment implements SurfaceHolder.Callback 
         }
         if (vibrate) {
             Vibrator vibrator = (Vibrator) getActivity().getSystemService(getActivity().VIBRATOR_SERVICE);
-            vibrator.vibrate(VIBRATE_DURATION);
+           // vibrator.vibrate(VIBRATE_DURATION);
         }
     }
 

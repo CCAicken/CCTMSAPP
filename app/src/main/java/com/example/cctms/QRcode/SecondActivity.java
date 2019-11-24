@@ -36,6 +36,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private void initView() {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear1);
+        LinearLayout linearLayout0 = (LinearLayout) findViewById(R.id.linear0);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +48,13 @@ public class SecondActivity extends AppCompatActivity {
                     isOpen = false;
                 }
 
+            }
+        });
+        //返回按钮点击事件
+        linearLayout0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

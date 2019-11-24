@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,10 +35,12 @@ public class activity_daka extends AppCompatActivity implements EasyPermissions.
     public static final int REQUEST_IMAGE = 112;
 
     public Button button3 = null;
+    public TextView tv_dakamsg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daka);
+        tv_dakamsg=findViewById(R.id.tv_dakamsg);
 
         /**
          * 初始化组件
@@ -86,9 +89,11 @@ public class activity_daka extends AppCompatActivity implements EasyPermissions.
                 }
                 if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
                     String result = bundle.getString(CodeUtils.RESULT_STRING);
-                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                    tv_dakamsg.setText("打卡点信息："+result);
+                   // Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
                 } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
-                    Toast.makeText(activity_daka.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                    tv_dakamsg.setText("解析二维码失败");
+                   // Toast.makeText(activity_daka.this, "解析二维码失败", Toast.LENGTH_LONG).show();
                 }
             }
         }
