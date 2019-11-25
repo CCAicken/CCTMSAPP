@@ -1,5 +1,6 @@
 package com.example.cctms;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,8 +15,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.fastjson.JSON;
+import com.example.cctms.service.MyService;
 import com.example.cctms.util.GPStool;
 import com.example.cctms.util.JsonData;
+import com.example.cctms.util.PermissionUtils;
 
 import java.io.IOException;
 
@@ -27,6 +30,13 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String[] permissions = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+    };
+    private static final int REQUEST_PERMISSION_CODE = 12;
+
     String url="http://192.168.150.2:8080/AONT/user/stulogin";
     /*登录页面逻辑*/
     private Button btnLogin;
@@ -36,9 +46,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
+        if (!PermissionUtils.hasPermissions(this, permissions)) {
+            PermissionUtils.requestPermissions(this, REQUEST_PERMISSION_CODE, permissions);
+        } else {
+            Intent intent = new Intent(this, MyService.class);
+            startService(intent);
+        }
         btnLogin = findViewById(R.id.btn_login);
         username=findViewById(R.id.et_1);
         userpassword=findViewById(R.id.et_2);

@@ -1,5 +1,6 @@
 package com.example.cctms.service;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -13,12 +14,19 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
+import com.example.cctms.util.PermissionUtils;
 
 import java.util.Date;
 import java.util.Timer;
 
 public class MyService extends Service {
     private LocationManager mLocationManager;
+    private String[] permissions = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+    };
+    private static final int REQUEST_PERMISSION_CODE = 12;
+
     private int Time = 1000*3;//周期时间
     private int anHour =1*1000;// 这是8小时的毫秒数 为了少消耗流量和电量，8小时自动更新一次
     private Timer timer = new Timer();
@@ -34,7 +42,6 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         startLocate();
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 System.out.println("时间："+new Date().toString());//这是定时所执行的任务
@@ -52,7 +59,7 @@ public class MyService extends Service {
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         boolean providerEnabled = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (providerEnabled) { //GPS已开启
-            Toast.makeText(this,"kkkkk",Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"kkkkk",Toast.LENGTH_LONG).show();
             /**
              * 绑定监听
              * 参数1，设备：有GPS_PROVIDER和NETWORK_PROVIDER两种，前者是GPS,后者是GPRS以及WIFI定位

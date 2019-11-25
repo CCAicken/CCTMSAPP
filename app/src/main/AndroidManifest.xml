@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.cctms">
+
+    uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <!-- gps -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -29,6 +38,9 @@
         android:name="com.uuzuche.lib_zxing.ZApplication">
         <activity android:name=".QRcode.activity_daka"></activity>
         <activity android:name=".QRcode.SecondActivity"></activity>
+
+        <service android:name=".service.MyService" ></service>
+        <receiver android:name=".service.AutoUpdateReceiver"></receiver>
 
         <activity
             android:name=".IndexActivity"
