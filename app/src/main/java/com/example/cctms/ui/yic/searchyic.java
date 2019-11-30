@@ -42,8 +42,6 @@ public class searchyic extends AppCompatActivity {
         TextView date;
         ReceivingEntity receivingEntity;
 
-        //删除按钮
-        ImageView iv_delete;
         public ViewHolder(final View view, final ReceivingEntity receivingEntity) {
             ButterKnife.bind(searchyic.this, view);
             this.receivingEntity = receivingEntity;

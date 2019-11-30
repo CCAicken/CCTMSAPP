@@ -5,19 +5,16 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.fastjson.JSON;
 import com.example.cctms.service.MyService;
 import com.example.cctms.util.GPStool;
-import com.example.cctms.util.JsonData;
+import com.example.cctms.util.HttpUtil;
 import com.example.cctms.util.PermissionUtils;
 
 import java.io.IOException;
@@ -106,40 +103,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if(response.isSuccessful()){//回调的方法执行在子线程。
-                    parseJSONWithGSON(response.body().string());
+                    HttpUtil.parseJSONWithGSON(response.body().string(),MainActivity.this,"登陆成功","登陆失败，请重试！");
                 }
             }});//此处省略回调方法。
     }
-    private void parseJSONWithGSON(String jsonData) {
-        //使用Jastjson
-        JsonData res= JSON.parseObject(jsonData, JsonData.class);
-        if(res==null){
-            Looper.prepare();
-            Toast.makeText(this,"登陆失败，请重试",Toast.LENGTH_SHORT).show();
-            Looper.loop();
-        }
-        else{
-            if(res.code==0){
-                Looper.prepare();
-                Toast.makeText(this,"登陆成功",Toast.LENGTH_SHORT).show();
-                Looper.loop();
-//                //TextView username=this.findViewById(R.id.wode_username );
-//                //Log.d("MainActivity",res.data.toString());
-//                Tuser student=JSON.parseObject(res.data.toString(), Tuser.class);
-//                //  Log.d("MainActivity",student.getStuName());
-//                MyApplication appstu= (MyApplication)this.getApplication();
-//                appstu.setStuId(student.getStuId());
-//                appstu.setClassId(student.getClassId());
-//                appstu.setAgend(student.getAgend());
-//                appstu.setCreateTime(student.getCreateTime());
-//                appstu.setStuName(student.getStuName());
 
-            }else{
-                Looper.prepare();
-                Toast.makeText(this,"登陆失败，请重试",Toast.LENGTH_SHORT).show();
-                Looper.loop();
-            }
-
-        }
-    }
 }

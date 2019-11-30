@@ -22,10 +22,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button3"
+        android:text="打卡点信息"
         android:textColor="#141414"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
     />
+
+    <Button
+        android:id="@+id/daka_btncom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定打卡"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@xml/bg_btn4"
+        android:textColor="#FFF"
+        android:layout_below="@id/tv_dakamsg"
+        />
 
 </RelativeLayout>
